@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/** @format */
+import { useEffect, useState } from "react";
+import { createTheme, ThemeProvider } from "@mui/material";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routing from "Routing";
+import themes from "./themes";
+import axios from "axios";
 
 function App() {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://queuing-system-a7cd9-default-rtdb.firebaseio.com/test.json`
+        );
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        throw error;
+      }
+    };
+    fetchData();
+  }, []);
+  console.log(themes(0));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={themes(0)}>
+      <Router>
+        <Routing />
+      </Router>
+    </ThemeProvider>
   );
 }
 
