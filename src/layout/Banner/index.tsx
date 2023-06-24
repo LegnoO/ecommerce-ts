@@ -42,7 +42,7 @@ const Banner = () => {
         </div>
       </div>
 
-      <Container className="section-break">
+      <Container sx={{ marginBottom: '80px' }}>
         <Grid container spacing={5}>
           <Grid item container alignItems="center" xs={6}>
             <div className="ms-7 w-60">
@@ -50,9 +50,9 @@ const Banner = () => {
                 Furnishing Your Dreams
               </Typography>
               <Typography
-                sx={{ lineHeight: '24px' }}
-                className="w-80 text-muted fw-light"
-                variant="body1"
+                sx={{ width: '85%', fontSize: 14, color: 'text.disabled' }}
+                className="text-capitalize "
+                component="p"
               >
                 We’ve Got Everything To Help You Create A Living Room That’s Ready For Entertaining.
               </Typography>

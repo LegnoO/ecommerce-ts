@@ -1,25 +1,19 @@
 /** @format */
 
-import React from "react";
-import {
-  Typography,
-  CardMedia,
-  CardContent,
-  Container,
-  Card,
-  Grid,
-} from "@mui/material";
+import React from 'react';
+import { Typography, CardMedia, CardContent, Container, Card, Grid } from '@mui/material';
 
 const Product = () => {
   return (
     <>
-      <Typography
-        sx={{ color: "#3c3c3c" }}
-        className="text-center mb-5 fw-light"
-        variant="h4">
-        Our Products
-      </Typography>
-      <Container className="section-break">
+      <Container sx={{ marginBottom: "80px"}}>
+        <Typography
+          sx={{ fontSize: 36, color: 'text.black' }}
+          className="text-center mb-5 fw-light"
+          component="h4"
+        >
+          Our Products
+        </Typography>
         <Grid container spacing={4}>
           <Grid item xs={3}>
             <Card className="shadow-none">

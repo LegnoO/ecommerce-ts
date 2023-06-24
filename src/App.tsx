@@ -1,12 +1,18 @@
 /** @format */
-import { useEffect, useState } from "react";
-import { createTheme, ThemeProvider } from "@mui/material";
-import { BrowserRouter as Router } from "react-router-dom";
-import Routing from "Routing";
-import themes from "./themes";
-import axios from "axios";
+import { useEffect, useState } from 'react';
+import { createTheme, ThemeProvider } from '@mui/material';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routing from 'Routing';
+import themes from './themes';
+import axios from 'axios';
+import { increment } from './features/test/testSlice';
+import { useAppSelector, useAppDispatch } from './app/hooks';
 
 function App() {
+  const count = useAppSelector((state) => state.test.value);
+  console.log(count);
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -15,13 +21,14 @@ function App() {
         );
         console.log(response.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
         throw error;
       }
     };
     fetchData();
+    dispatch(increment());
   }, []);
-  console.log(themes(0));
+
   return (
     <ThemeProvider theme={themes(0)}>
       <Router>

@@ -4,38 +4,49 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 const Footer = () => {
   return (
     <>
-      <Container>
-        <Grid container>
+      <Container sx={{ marginBottom: '30px' }}>
+        <Grid container spacing={2}>
           <Grid item xs={4}>
             <Box>
               <img
                 src="https://minim-demo.myshopify.com/cdn/shop/t/2/assets/logo.png?v=76281246793426370331550819075"
                 alt=""
+                style={{ objectFit: 'cover' }}
               />
-              <Typography sx={{ fontSize: 12, color: 'text.disabled' }} component="p">
-                WE ARE EAGER TO HELP YOU TO MAKE YOUR HOUSE MORE BEAUTIFUL, MORE LIVABLE WITH AN
-                AFFORDABLE PRICE & GOOD QUALITY OF FURNITURES.
-              </Typography>
-              <Stack
-                sx={{
-                  '& > *': {
-                    backgroundColor: '#f3f3f3',
-                    fontSize: '14px',
-                    color: '#999'
-                  }
-                }}
-                direction="row"
-                spacing={1}
-              >
-                <IconButton>
-                  <FontAwesomeIcon icon={faCoffee} />
-                </IconButton>
-                <IconButton>
-                  <FontAwesomeIcon icon={faCoffee} />
-                </IconButton>
-                <IconButton>
-                  <FontAwesomeIcon icon={faCoffee} />
-                </IconButton>
+              <Stack spacing={3} mt={4}>
+                <Typography
+                  sx={{
+                    fontSize: 12,
+                    lineHeight: '25px',
+                    color: 'text.disabled',
+                    paddingRight: '10px'
+                  }}
+                  component="p"
+                >
+                  WE ARE EAGER TO HELP YOU TO MAKE YOUR HOUSE MORE BEAUTIFUL, MORE LIVABLE WITH AN
+                  AFFORDABLE PRICE & GOOD QUALITY OF FURNITURES.
+                </Typography>
+                <Stack
+                  sx={{
+                    '& > *': {
+                      backgroundColor: '#f3f3f3',
+                      fontSize: '14px',
+                      color: '#999'
+                    }
+                  }}
+                  direction="row"
+                  spacing={1}
+                >
+                  <IconButton>
+                    <FontAwesomeIcon icon={faCoffee} />
+                  </IconButton>
+                  <IconButton>
+                    <FontAwesomeIcon icon={faCoffee} />
+                  </IconButton>
+                  <IconButton>
+                    <FontAwesomeIcon icon={faCoffee} />
+                  </IconButton>
+                </Stack>
               </Stack>
             </Box>
           </Grid>
@@ -111,6 +122,29 @@ const Footer = () => {
             </Box>
           </Grid>
         </Grid>
+      </Container>
+      <Container sx={{ borderTop: '2px solid #f3f3f3', paddingBottom: '50px' }}>
+        <Box>
+          <Stack direction="row" sx={{ paddingY: '30px' }}>
+            <Box>
+              <Typography sx={{ fontSize: 12, color: 'text.disabled' }} component="h6">
+                Copyright © 2019 EngoTheme
+              </Typography>
+            </Box>
+            <Box className="ms-auto">
+              <Stack
+                sx={{ '& > *': { fontSize: 12, color: 'text.disabled' } }}
+                direction="row"
+                spacing={3}
+              >
+                <Typography component="p">PRIVACY POLICY</Typography>
+                <Typography component="p">TERMS OF SERVICES</Typography>
+                <Typography component="p">AFFILIATION</Typography>
+                <Typography component="p">SPONSORS</Typography>
+              </Stack>
+            </Box>
+          </Stack>
+        </Box>
       </Container>
     </>
   );
